@@ -1,21 +1,27 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validador dos campos A e B</title>
     <link rel="stylesheet" href="main.css">
-    <title>Exercício HTML/JS</title>
 </head>
 <body>
-    <div id="container">
-        <h1 class="title">Validação </h1>
-        <form id="formulario">
-            <input type="number" id = 'campoA' placeholder="Campo A">
-            <input type="number" id="campoB" placeholder="Campo B">
-            <button type="submit">Enviar</button>
-            <p></p>
+    <div class="container">
+        <h1>Verifique a validade dos números</h1>
+        <form id="numberForm">
+            <div class="form-group">
+                <label for="campoA">Campo A:</label>
+                <input id="campoA" type="number" name="campoA" required="">
+            </div>
+            <div class="form-group">
+                <label for="campoB">Campo B:</label>
+                <input id="campoB" type="number" name="campoB" required="">
+            </div>
+            <button type="submit">VERIFICAR</button>
+            <div class="message"></div>
         </form>
+<script src="main.js"></script>
     </div>
-    <script src="./main.js"></script>
 </body>
 </html>

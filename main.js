@@ -1,15 +1,24 @@
-document.getElementById('myForm').addEventListener('submit', function(event) {
-    event.preventDefault();
-    const campoA = parseFloat(document.getElementById('campoA').value);
-    const campoB = parseFloat(document.getElementById('campoB').value);
 
-    const messageDiv = document.getElementById('message');
+const form = document.getElementById('numberForm');
+const inputA = document.getElementById('campoA');
+const inputB = document.getElementById('campoB');
+const messageDiv = document.createElement('div'); 
+form.appendChild(messageDiv); 
 
-    if (campoB > campoA) {
-        messageDiv.textContent = 'O formulário é válido! Campo B é maior que Campo A.';
-        messageDiv.className = 'message success';
+
+form.addEventListener('submit', function(event) {
+    event.preventDefault(); 
+
+   
+    const valueA = parseFloat(inputA.value);
+    const valueB = parseFloat(inputB.value);
+
+
+    if (valueB > valueA) {
+        messageDiv.textContent = 'O número B é maior que o número A.'; 
+        messageDiv.className = 'message'; 
     } else {
-        messageDiv.textContent = 'O formulário é inválido! Campo B deve ser maior que Campo A.';
-        messageDiv.className = 'message error';
+        messageDiv.textContent = 'O número B deve ser maior que o número A.'; 
+        messageDiv.className = 'message error'; 
     }
 });
